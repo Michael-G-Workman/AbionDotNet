@@ -1,0 +1,105 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ABION</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    @Styles.Render("~/Content/css")
+
+
+    <style type="text/css">
+        #ctl00_Body_formlabel {
+            font-size: 18px;
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="main">
+
+        <div class="header">
+            <div class="header_resize">
+                <div class="logo">
+                    <h1>ABION<small>Technology, Web, and Social Media Solutions</small></h1>
+                </div>
+                <div class="searchform">
+                </div>
+                <div class="clr"></div>
+                <div class="social">
+                    <p>
+                        <a href="http://www.facebook.com/abionTechnology" target="_blank"><img src="~/Content/Images/soc1.png" width="24" height="24" alt="Facebook" /></a>
+                        <a href="http://www.twitter.com/abiontechnology" target="_blank"><img src="~/Content/Images/soc3.png" width="24" height="24" alt="Twitter" /></a>
+                        <a href="http://abiontechnology.blogspot.com" target="_blank"><img src="~/Content/Images/bloggerlogo.png" width="24" height="24" alt="Blogger" /></a>
+                        <a href="https://github.com/ABION-Technology" target="_blank"><img src="~/Content/Images/github.jpg" width="24" height="24" alt="GitHub" /></a>
+                    </p>
+                </div>
+                <div class="menu_nav">
+                    <ul>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/Index") { @Html.Raw("class='active'") }><a href="/"><span>Home</span></a></li>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/WebApp") { @Html.Raw("class='active'") }><a href="/Home/WebApp"><span>Web</span></a></li>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/Mobile") { @Html.Raw("class='active'") }><a href="/Home/Mobile"><span>Mobile</span></a></li>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/Azure") { @Html.Raw("class='active'") }><a href="/Home/Azure"><span>Azure Cloud</span></a></li>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/SocialMedia") { @Html.Raw("class='active'") }><a href="/Home/SocialMedia"><span>Social Media</span></a></li>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/WebAdvertising") { @Html.Raw("class='active'") }><a href="/Home/WebAdvertising"><span>Web Ads</span></a></li>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/Contact") { @Html.Raw("class='active'") }><a href="/Home/Contact"><span>Contact</span></a></li>
+                    </ul>
+                </div>
+
+        @RenderBody()
+
+        <div class="fbg">
+            <div class="fbg_resize">
+                <div class="col c1">
+                            &nbsp;
+                </div>
+                <div class="col c2">
+                    <h2><span>Services</span> Overview <small></small></h2>
+                    <p>ABION is a full service web development and strategy firm. ABION specializes in the following:</p>
+                    <ul class="fbg_ul">
+                        <li>Web and Mobile Web</li>
+                        <li>Azure Cloud</li>
+                        <li>Mobile Apps</li>
+                        <li>Social Media</li>
+                        <li>Search Engine Optimization (SEO)</li>
+                        <li>Web Ad Campaigns</li>
+                    </ul>
+                </div>
+                <div class="col c3">
+                    <h2><span>Contact</span><small></small></h2>
+                    <p>ABION is located in sunny Cape Canaveral, Florida but will accept clients in any location. Contact ABION today to see what help can be provided with your presence on the Web</p>
+                    <p class="contact_info">
+                        <span>Address:</span> 208 Caroline Street<br>
+                        <span>&nbsp;</span> # 504<br />
+                        <span>&nbsp;</span> Cape Canaveral, FL 32920<br />
+                        <span>Phone:</span> (321) 432-9295<br />
+                    </p>
+                </div>
+                <div class="clr"></div>
+             </div>
+        </div>
+        <div class="footer">
+            <div class="footer_resize">
+                <p class="lf">
+                    &copy; @DateTime.Now.Year Copyright <a href="#">ABION LLC</a>
+                    <div class="clr"></div>
+            </div>
+        </div>
+    </div>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  </script>
+
+@Scripts.Render("~/bundles/jquery")
+@RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content">
+    <div class="content_resize">
+        <div class="mainbar" id="contact">
+            <div class="article">
+                <h3>Contact</h3>
+                <div class="clr"></div>
+                <form action="/Home/Contact" method="post" runat="server" id="sendemail" class="contactform">
+                    @Html.AntiForgeryToken()
+                    <ol>
+                        <li>
+                            <label for="ContactName">Name (required)</label>
+                            <input name="ContactName" id="ContactName" class="textbox" />
+                        </li>
+                        <li>
+                            <label for="ContactEmail">Email Address (required)</label>
+                            <input name="ContactEmail" id="ContactEmail" class="textbox" />
+                        </li>
+                        <li>
+                            <label for="ContactCategories_ID">Category</label>
+                            @Html.DropDownList("ContactCategories_ID", (SelectList)ViewBag.Categories, "Select a Category")
+                        </li>
+                        <li>
+                            <label for="WebMessage">Your Message</label>
+                            <textarea name="WebMessage" id="WebMessage" cols="50" rows="8" class="textbox"></textarea>
+                        </li>
+                        <li>
+                            <br>
+                            <button type="submit" text="Send" id="Button1" class="contactbutton">Send</button>
+                            <div class="clr"></div>
+                        </li>
+                    </ol>
+                </form>
+                <div class="contactinfo">
+                    <p>ABION is located in sunny Cape Canaveral, Florida but will accept clients in any location. Contact ABION today to see what help can be provided with your presence on the web.</p>
+                    <p>
+                        ABION Technology
+                        <br />
+                        208 Caroline Street<br /> # 504<br /> Cape Canaveral, FL 32920
+                        <br>
+                        <br>
+                        (321) 432-9295
+                        <br>
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="clr"></div>
+    </div>
+</div>
+</div>
