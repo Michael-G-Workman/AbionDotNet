@@ -180,7 +180,9 @@
     <Content Include="Scripts\cufon-yui.js" />
     <Content Include="Scripts\jquery-1.4.2.min.js" />
     <Content Include="Scripts\script.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -210,6 +212,8 @@
     <Content Include="Views\Home\WebAdvertising.cshtml" />
     <Content Include="Views\Home\ContactConfirmation.cshtml" />
     <Content Include="Views\Home\CustomApp.cshtml" />
+    <None Include="Properties\PublishProfiles\AbionDotNet20181226012638 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Books20181225085249 - Web Deploy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
