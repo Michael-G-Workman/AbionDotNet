@@ -154,6 +154,7 @@
     <Content Include="Content\Images\main_bg.jpg" />
     <Content Include="Content\Images\menu_a.png" />
     <Content Include="Content\Images\menu_sep.png" />
+    <Content Include="Content\Images\microsoftazure.jpg" />
     <Content Include="Content\Images\overlay.png" />
     <Content Include="Content\Images\page_a.png" />
     <Content Include="Content\Images\readmore.png" />

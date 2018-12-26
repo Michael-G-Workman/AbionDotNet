@@ -124,7 +124,7 @@ namespace AbionDotNet.Controllers
                 smtp.Port = OutlookPort;
                 smtp.EnableSsl = OutlookSSL;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new System.Net.NetworkCredential("michael.g.workman@outlook.com", "REDACTED-NOT-ACTUAL-PASSWORD");
+                smtp.Credentials = new System.Net.NetworkCredential("michael.g.workman@outlook.com", "REDACTED");
 
                 MailMessage message = new MailMessage();
                 message.From = new MailAddress("michael.g.workman@outlook.com");

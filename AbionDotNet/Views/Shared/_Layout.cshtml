@@ -41,56 +41,55 @@
                 </div>
                 <div class="menu_nav">
                     <ul>
-                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/Index") { @Html.Raw("class='active'") }><a href="/"><span>Home</span></a></li>
-                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/WebApp") { @Html.Raw("class='active'") }><a href="/Home/WebApp"><span>Web</span></a></li>
-                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/Mobile") { @Html.Raw("class='active'") }><a href="/Home/Mobile"><span>Mobile</span></a></li>
-                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/Azure") { @Html.Raw("class='active'") }><a href="/Home/Azure"><span>Azure Cloud</span></a></li>
-                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/SocialMedia") { @Html.Raw("class='active'") }><a href="/Home/SocialMedia"><span>Social Media</span></a></li>
-                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/WebAdvertising") { @Html.Raw("class='active'") }><a href="/Home/WebAdvertising"><span>Web Ads</span></a></li>
-                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/Contact") { @Html.Raw("class='active'") }><a href="/Home/Contact"><span>Contact</span></a></li>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/Index") { @Html.Raw("class='active'") } }><a href="/"><span>Home</span></a></li>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/WebApp") { @Html.Raw("class='active'") } }><a href="/Home/WebApp"><span>Web</span></a></li>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/Mobile") { @Html.Raw("class='active'") } }><a href="/Home/Mobile"><span>Mobile</span></a></li>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/Azure") { @Html.Raw("class='active'") } }><a href="/Home/Azure"><span>Azure Cloud</span></a></li>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/SocialMedia") { @Html.Raw("class='active'") } }><a href="/Home/SocialMedia"><span>Social Media</span></a></li>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/WebAdvertising") { @Html.Raw("class='active'") } }><a href="/Home/WebAdvertising"><span>Web Ads</span></a></li>
+                        <li @if ((ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString()) == "Home/Contact") { @Html.Raw("class='active'") } }><a href="/Home/Contact"><span>Contact</span></a></li>
                     </ul>
                 </div>
 
-        @RenderBody()
+                @RenderBody()
 
-        <div class="fbg">
-            <div class="fbg_resize">
-                <div class="col c1">
+                <div class="fbg">
+                    <div class="fbg_resize">
+                        <div class="col c1">
                             &nbsp;
+                        </div>
+                        <div class="col c2">
+                            <h2><span>Services</span> Overview <small></small></h2>
+                            <p>ABION is a full service web development and strategy firm. ABION specializes in the following:</p>
+                            <ul class="fbg_ul">
+                                <li>Web and Mobile Web</li>
+                                <li>Azure Cloud</li>
+                                <li>Mobile Apps</li>
+                                <li>Social Media</li>
+                                <li>Search Engine Optimization (SEO)</li>
+                                <li>Web Ad Campaigns</li>
+                            </ul>
+                        </div>
+                        <div class="col c3">
+                            <h2><span>Contact</span><small></small></h2>
+                            <p>ABION is located in sunny Cape Canaveral, Florida but will accept clients in any location. Contact ABION today to see what help can be provided with your presence on the Web</p>
+                            <p class="contact_info">
+                                <span>Address:</span> 208 Caroline Street<br />
+                                <span>&nbsp;</span> # 504<br />
+                                <span>&nbsp;</span> Cape Canaveral, FL 32920-2711<br />
+                                <span>Phone:</span> (321) 432-9295<br />
+                            </p>
+                        </div>
+                        <div class="clr"></div>
+                    </div>
                 </div>
-                <div class="col c2">
-                    <h2><span>Services</span> Overview <small></small></h2>
-                    <p>ABION is a full service web development and strategy firm. ABION specializes in the following:</p>
-                    <ul class="fbg_ul">
-                        <li>Web and Mobile Web</li>
-                        <li>Azure Cloud</li>
-                        <li>Mobile Apps</li>
-                        <li>Social Media</li>
-                        <li>Search Engine Optimization (SEO)</li>
-                        <li>Web Ad Campaigns</li>
-                    </ul>
+                <div class="footer">
+                    <div class="footer_resize">
+                        <p class="lf">&copy; 2018 Copyright ABION LLC <span> <!-- Design: gn: <a href="http://www.dreamtemplate.coDream Website Templatesates --></span></p>
+                        <div class="clr"></div>
+                    </div>
                 </div>
-                <div class="col c3">
-                    <h2><span>Contact</span><small></small></h2>
-                    <p>ABION is located in sunny Cape Canaveral, Florida but will accept clients in any location. Contact ABION today to see what help can be provided with your presence on the Web</p>
-                    <p class="contact_info">
-                        <span>Address:</span> 208 Caroline Street<br>
-                        <span>&nbsp;</span> # 504<br />
-                        <span>&nbsp;</span> Cape Canaveral, FL 32920<br />
-                        <span>Phone:</span> (321) 432-9295<br />
-                    </p>
-                </div>
-                <div class="clr"></div>
-             </div>
-        </div>
-        <div class="footer">
-            <div class="footer_resize">
-                <p class="lf">
-                    &copy; @DateTime.Now.Year Copyright <a href="#">ABION LLC</a>
-                    <div class="clr"></div>
             </div>
-        </div>
-    </div>
 
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
