@@ -47,6 +47,11 @@ namespace AbionDotNet.Controllers
             return View();
         }
 
+        public ActionResult CustomApp()
+        {
+            return View();
+        }
+
         // Contact GET
         public ActionResult Contact()
         {

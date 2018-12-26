@@ -209,6 +209,7 @@
     <Content Include="Views\Home\SocialMedia.cshtml" />
     <Content Include="Views\Home\WebAdvertising.cshtml" />
     <Content Include="Views\Home\ContactConfirmation.cshtml" />
+    <Content Include="Views\Home\CustomApp.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
