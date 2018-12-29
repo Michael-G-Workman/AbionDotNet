@@ -66,7 +66,7 @@ namespace AbionDotNet.Controllers
         // Contact POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Contact([Bind(Include = "ContactName, ContactEmail, ContactCategories_ID, WebMessage")] EmailContact emailContact)
+        public ActionResult Contact([Bind(Include = "ContactName, ContactEmail, ContactPhone, ContactCategories_ID, WebMessage")] EmailContact emailContact)
         {
             ViewBag.Message = "Abion Technology Contact";
 
@@ -88,7 +88,7 @@ namespace AbionDotNet.Controllers
                     // get the email category and set the email Body
                     string emailCategory = db.ContactCategories.Where(x => x.ID == emailContact.ContactCategories_ID).SingleOrDefault().category;
                     mailer.Subject = "Abion Website Inquiry - Category: " + emailCategory;
-                    mailer.Body = "From Name: " + emailContact.ContactName + " From Email: " + emailContact.ContactEmail + "<br>" + emailContact.WebMessage;
+                    mailer.Body = "From Name: " + emailContact.ContactName + " From Email: " + emailContact.ContactEmail +  " Phone: " + emailContact.ContactPhone + "<br>" + emailContact.WebMessage;
 
                     // send email
                     mailer.Send();

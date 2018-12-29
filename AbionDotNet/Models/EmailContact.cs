@@ -20,6 +20,10 @@ namespace AbionDotNet.Models
         [Display(Name = "Contact Email")]
         public string ContactEmail { get; set; }
 
+        [Required(AllowEmptyStrings = false), MaxLength(20)]
+        [Display(Name = "Contact Phone")]
+        public string ContactPhone { get; set; }
+
         [Required]
         [Display(Name = "Category ID")]
         public Guid ContactCategories_ID { get; set; }
