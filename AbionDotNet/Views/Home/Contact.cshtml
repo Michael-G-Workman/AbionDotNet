@@ -1,6 +1,8 @@
 ﻿@{
-    ViewBag.Title = "Contact";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+                /**/
+
+                ViewBag.Title = "Contact";
+                Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="content">
@@ -9,7 +11,7 @@
             <div class="article">
                 <h3>Contact</h3>
                 <div class="clr"></div>
-                <form action="/Home/Contact" method="post" id="sendemail" class="contactform">
+                <form action="/Home/Contact" method="post" id="ContactForm" class="contactform">
                     @Html.AntiForgeryToken()
                     <ol>
                         <li>
@@ -33,8 +35,11 @@
                             <textarea name="WebMessage" id="WebMessage" cols="50" rows="8" class="textbox"></textarea>
                         </li>
                         <li>
-                            <br>
-                            <button type="submit" text="Send" id="Button1" class="contactbutton">Send</button>
+                            <div id="ValidationMessage" style="display:none;color:red;"></div>
+                        </li>
+                        <li>
+                            <br />
+                            <button type="button" text="Send" id="SendBTN" class="contactbutton">Send</button>
                             <div class="clr"></div>
                         </li>
                     </ol>
@@ -58,3 +63,81 @@
     </div>
 </div>
 </div>
+
+
+@* JQuery Code for Form Validation *@
+@section Scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#SendBTN").click(function () {
+
+                // vars for form validation
+                var formValidated = true;
+                var validationMessage = "Error:<br />";
+
+                // Contact Name
+                if ($("#ContactName").val().trim() == "") {
+                    formValidated = false;
+                    validationMessage = validationMessage + "Contact Name Required<br />";
+                }
+
+                // Contact Email
+                if ($("#ContactEmail").val().trim() == "") {
+                    formValidated = false;
+                    validationMessage = validationMessage + "Contact Email Required<br />";
+                }
+                else {
+
+                    // Test Contact Email for Proper Format Using Regular Expression
+                    var regEx = /^[a-zA-Z0-9._]+[a-zA-Z0-9]+@@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
+                    if (!regEx.test($("#ContactEmail").val()))
+                    {
+                        formValidated = false;
+                        validationMessage = validationMessage + "Contact Email Invalid Format<br />";
+                    }
+
+                    // Test Contact Email for Proper Length
+                    if ($("#ContactEmail").val().length < 8) {
+                        formValdiated = false;
+                        validationMessage = validationMessage + "Contact Email Not At Least 8 Characters<br />"
+                    }
+                }
+
+                // Contact Phone
+                if ($("#ContactPhone").val().trim() == "") {
+                    formValidated = false;
+                    validationMessage = validationMessage + "Contact Phone Number Required<br />";
+                }
+                else if ($("#ContactPhone").val().trim().length < 7) {
+                    formValidated = false;
+                    validationMessage = validationMessage + "Contact Phone Number Not at Least 7 Numbers<br />";
+                }
+
+                // Contact Categories
+                if ($("#ContactCategories_ID").val() == "") {
+                    formValidated = false;
+                    validationMessage = validationMessage + "Contact Category Required<br />";
+                }
+
+                // Web Message
+                if ($("textarea#WebMessage").val().trim() == "") {
+                    formValidated = false;
+                    validationMessage = validationMessage + "Message Required<br />";
+                }
+
+                // If No Error, Submit Form, Else Display Error and Do Not Submit Form
+                if (formValidated) {
+                    $("#ValidationMessage").hide();
+                    $("#ContactForm").submit();
+                }
+                else {
+                    $("#ValidationMessage").html(validationMessage);
+                    $("#ValidationMessage").show();
+                }
+
+            });
+        });
+    </script>
+}
