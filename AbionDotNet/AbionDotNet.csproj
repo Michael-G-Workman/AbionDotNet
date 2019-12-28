@@ -215,6 +215,7 @@
     <None Include="Properties\PublishProfiles\AbionDotNet20181226012638 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Books20181225085249 - Web Deploy.pubxml" />
     <Content Include="Views\Home\OODevelopment.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

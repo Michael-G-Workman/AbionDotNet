@@ -37,11 +37,6 @@ namespace AbionDotNet.Controllers
             return View();
         }
 
-        public ActionResult SocialMedia()
-        {
-            return View();
-        }
-
         public ActionResult WebAdvertising()
         {
             return View();
@@ -53,6 +48,16 @@ namespace AbionDotNet.Controllers
         }
 
         public ActionResult OODevelopment()
+        {
+            return View();
+        }
+
+        public ActionResult SocialMedia()
+        {
+            return View();
+        }
+
+        public ActionResult Blog()
         {
             return View();
         }
