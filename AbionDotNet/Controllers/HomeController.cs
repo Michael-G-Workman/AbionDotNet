@@ -86,24 +86,42 @@ namespace AbionDotNet.Controllers
                 if (ModelState.IsValid)
                 {
 
-                    db.EmailContacts.Add(emailContact);
-                    db.SaveChanges();
+                    if ((emailContact.WebMessage.ToUpper().Contains("ADULT") && (emailContact.WebMessage.ToUpper().Contains("SEX")))
+                        || (emailContact.WebMessage.ToUpper().Contains("ADULT") && (emailContact.WebMessage.ToUpper().Contains("DATE")))
+                        || (emailContact.WebMessage.ToUpper().Contains("ADULT") && (emailContact.WebMessage.ToUpper().Contains("DATING")))
+                        || (emailContact.WebMessage.ToUpper().Contains("ADULT") && (emailContact.WebMessage.ToUpper().Contains("HOT")))
+                        || (emailContact.WebMessage.ToUpper().Contains("GIRL") && (emailContact.WebMessage.ToUpper().Contains("SEX")))
+                        || (emailContact.WebMessage.ToUpper().Contains("GIRL") && (emailContact.WebMessage.ToUpper().Contains("DATE")))
+                        || (emailContact.WebMessage.ToUpper().Contains("GIRL") && (emailContact.WebMessage.ToUpper().Contains("DATING")))
+                        || (emailContact.WebMessage.ToUpper().Contains("GIRL") && (emailContact.WebMessage.ToUpper().Contains("HOT")))
+                        || (emailContact.WebMessage.ToUpper().Contains("SEX"))
+                        || (emailContact.WebMessage.ToUpper().Contains("DATING")))
+                    {
+                        // do nothing, spam email
+                        return View("Index");
+                    }
+                    else
+                    {
 
-                    // create Gmailer object and initialize data
-                    OutlookMailer mailer = new OutlookMailer();
-                    mailer.ToEmail = "michael.g.workman@gmail.com";
-                    mailer.FromEmail = emailContact.ContactEmail;
-                    mailer.FromName = emailContact.ContactName;
+                        db.EmailContacts.Add(emailContact);
+                        db.SaveChanges();
 
-                    // get the email category and set the email Body
-                    string emailCategory = db.ContactCategories.Where(x => x.ID == emailContact.ContactCategories_ID).SingleOrDefault().category;
-                    mailer.Subject = "Abion Website Inquiry - Category: " + emailCategory;
-                    mailer.Body = "From Name: " + emailContact.ContactName + " From Email: " + emailContact.ContactEmail +  " Phone: " + emailContact.ContactPhone + "<br>" + emailContact.WebMessage;
+                        // create Gmailer object and initialize data
+                        OutlookMailer mailer = new OutlookMailer();
+                        mailer.ToEmail = "michael.g.workman@gmail.com";
+                        mailer.FromEmail = emailContact.ContactEmail;
+                        mailer.FromName = emailContact.ContactName;
 
-                    // send email
-                    mailer.Send();
+                        // get the email category and set the email Body
+                        string emailCategory = db.ContactCategories.Where(x => x.ID == emailContact.ContactCategories_ID).SingleOrDefault().category;
+                        mailer.Subject = "Abion Website Inquiry - Category: " + emailCategory;
+                        mailer.Body = "From Name: " + emailContact.ContactName + " From Email: " + emailContact.ContactEmail + " Phone: " + emailContact.ContactPhone + "<br>" + emailContact.WebMessage;
 
-                    return View("ContactConfirmation");
+                        // send email
+                        mailer.Send();
+
+                        return View("ContactConfirmation");
+                    }
                 }
                 else
                 {
