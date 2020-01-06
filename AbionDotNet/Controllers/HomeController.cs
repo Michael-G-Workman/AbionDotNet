@@ -94,6 +94,8 @@ namespace AbionDotNet.Controllers
                         || (emailContact.WebMessage.ToUpper().Contains("GIRL") && (emailContact.WebMessage.ToUpper().Contains("DATE")))
                         || (emailContact.WebMessage.ToUpper().Contains("GIRL") && (emailContact.WebMessage.ToUpper().Contains("DATING")))
                         || (emailContact.WebMessage.ToUpper().Contains("GIRL") && (emailContact.WebMessage.ToUpper().Contains("HOT")))
+                        || (emailContact.WebMessage.ToUpper().Contains("WEB") && (emailContact.WebMessage.ToUpper().Contains("AD")))
+                        || (emailContact.WebMessage.ToUpper().Contains("WEB") && (emailContact.WebMessage.ToUpper().Contains("ADVERTISEMENT")))
                         || (emailContact.WebMessage.ToUpper().Contains("SEX"))
                         || (emailContact.WebMessage.ToUpper().Contains("DATING"))
                         || (emailContact.WebMessage.ToUpper().Contains("SEO"))
