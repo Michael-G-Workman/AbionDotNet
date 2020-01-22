@@ -124,6 +124,7 @@ namespace AbionDotNet.Controllers
                         || (emailContact.WebMessage.ToUpper().Contains("SEX"))                  // utf-8
                         || (emailContact.WebMessage.ToUpper().Contains("SPAM"))                 // utf-8
                         || (emailContact.WebMessage.ToUpper().Contains("DATING"))               // utf-8
+                        || (emailContact.WebMessage.ToUpper().Contains("BITCOIN"))              // utf-8
                         || (emailContact.WebMessage.ToUpper().Contains("VERDIENEN SIE GELD"))   // ansi
                         || (emailContact.WebMessage.Contains("Verdienen Sie Geld"))             // ansi
                         || (emailContact.WebMessage.Contains("verdienen sie geld"))             // ansi
@@ -134,6 +135,7 @@ namespace AbionDotNet.Controllers
                         || (emailContact.WebMessage.Contains("passives einkommen"))             // ansi
                         || (emailContact.WebMessage.Contains("einkommen"))                      // ansi
                         || (emailContact.WebMessage.ToUpper().Contains("SPAM"))                 // ansi
+                        || (emailContact.WebMessage.ToUpper().Contains("BITCOIN"))              // ansi
                         )
                     {
                         // do nothing, spam email
