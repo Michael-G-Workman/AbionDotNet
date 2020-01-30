@@ -124,6 +124,7 @@ namespace AbionDotNet.Controllers
                         || (emailContact.WebMessage.ToUpper().Contains("SEX"))                  // utf-8
                         || (emailContact.WebMessage.ToUpper().Contains("SPAM"))                 // utf-8
                         || (emailContact.WebMessage.ToUpper().Contains("DATING"))               // utf-8
+                        || (emailContact.WebMessage.ToUpper().Contains("ADULT"))                // utf-8
                         || (emailContact.WebMessage.ToUpper().Contains("BITCOIN"))              // utf-8
                         || (emailContact.WebMessage.ToUpper().Contains("VERDIENEN SIE GELD"))   // ansi
                         || (emailContact.WebMessage.Contains("Verdienen Sie Geld"))             // ansi
@@ -136,10 +137,19 @@ namespace AbionDotNet.Controllers
                         || (emailContact.WebMessage.Contains("einkommen"))                      // ansi
                         || (emailContact.WebMessage.ToUpper().Contains("SPAM"))                 // ansi
                         || (emailContact.WebMessage.ToUpper().Contains("BITCOIN"))              // ansi
+                        || (emailContact.ContactName.ToUpper().Contains("SEX"))                 // ansi
+                        || (emailContact.ContactName.ToUpper().Contains("ADULT"))               // ansi
+                        || (emailContact.ContactName.ToUpper().Contains("DATING"))              // ansi
+                        || (emailContact.ContactPhone.ToUpper().Contains("SEX"))                // ansi
+                        || (emailContact.ContactPhone.ToUpper().Contains("ADULT"))              // ansi
+                        || (emailContact.ContactPhone.ToUpper().Contains("DATING"))             // ansi
                         )
                     {
-                        // do nothing, spam email
-                        return View("Index");
+                        // error message
+                        ViewBag.ErrorMessage = "Invalid Content, Message Not Sent";
+
+                        // display error message
+                        return View("~/Views/Shared/Error.cshtml");
                     }
                     else
                     {

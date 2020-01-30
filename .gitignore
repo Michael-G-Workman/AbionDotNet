@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /AbionDotNet/Properties/PublishProfiles/Books20181225085249 - Web Deploy.pubxml
+/AbionDotNet/Views/Home/OpenBSDSecureComputing.cshtml
