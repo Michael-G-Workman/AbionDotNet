@@ -216,7 +216,6 @@
     <None Include="Properties\PublishProfiles\Books20181225085249 - Web Deploy.pubxml" />
     <Content Include="Views\Home\OODevelopment.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
-    <Content Include="Views\Home\OpenBSDSecureComputing.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
